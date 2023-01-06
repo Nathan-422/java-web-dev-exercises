@@ -20,6 +20,7 @@ public class AliceInWonderlandSearch {
 
         if (textContainsSearchTerm) {
             int searchTermIndex = aliceText.toLowerCase().indexOf(userInput.toLowerCase());
+
             System.out.println("Your text was found starting at character: " + searchTermIndex + ".\n" +
                     "The length of your search term was: " + userInput.length());
 
@@ -31,5 +32,7 @@ public class AliceInWonderlandSearch {
 
 
         System.out.println("Text now reads:\n" + aliceText);
+        input.close();
+
     }
 }
