@@ -94,12 +94,6 @@ public class ExerciseThree {
             }
 
             numberOfLettersToPrint = input.nextInt();
-//            try {
-//                numberOfLettersToPrint = input.nextInt();
-//            } catch (Exception e) {
-//                System.out.println("Input must be a number.");
-//                continue;
-//            }
 
             // exit statement
             if (numberOfLettersToPrint > 0) {
