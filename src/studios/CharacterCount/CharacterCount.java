@@ -1,14 +1,15 @@
 package studios.CharacterCount;
 
+import java.io.FileReader;
+import java.io.Reader;
 import java.util.*;
 
 public class CharacterCount {
 
     public static void main(String[] args) {
 
-
         // init variables
-        String text = "If the product of two terms is zero then common sense says at least one of the two terms has to be zero to start with. So if you move all the terms over to one side, you can put the quadratics into a form that can be factored allowing that side of the equation to equal zero. Once you’ve done that, it’s pretty straightforward from there.";
+        String text = loadText();
         char[] characters = text.toCharArray();
         Scanner scan = new Scanner(System.in);
 
@@ -16,6 +17,7 @@ public class CharacterCount {
         ArrayList<Character> foundCharacters = new ArrayList<>();
         HashMap<Character, Integer> characterCounts = new HashMap<>();
 
+        // ask for a user supplied line
         System.out.println("Enter a line count (blank to use default text):");
         String input = scan.nextLine();
 
@@ -43,14 +45,31 @@ public class CharacterCount {
 
         }
 
+        // sort characters before printing
         Collections.sort(foundCharacters);
 
+        // print counts of characters
         for (Character c : foundCharacters) {
-
             System.out.println(c + ": " + characterCounts.get(c));
-
         }
 
+    }
+
+    private static String loadText() {
+
+        final String FILE = "src/studios/CharacterCount/HiddenFigures.txt";
+        String text = "Error";
+
+        try {
+            Reader in = new FileReader(FILE);
+            Scanner scanner = new Scanner(in);
+
+            text = scanner.nextLine();
+        } catch (Exception e) {
+            System.out.println("Failed to load files :(");
+            e.printStackTrace();
+        }
+        return text;
     }
 
 }
