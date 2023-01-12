@@ -30,6 +30,7 @@ public class CharacterCount {
 
             Character c = Character.toLowerCase(characters[i]);
 
+            // TODO filter to alphabetic characters only
             if (c.equals(' ') || c.equals(',') || c.equals('.') || c.equals('’')) {
                 continue;
             }
@@ -64,7 +65,10 @@ public class CharacterCount {
             Reader in = new FileReader(FILE);
             Scanner scanner = new Scanner(in);
 
+            // get text from the file
             text = scanner.nextLine();
+            // this works because the file is only one line long.
+            // more lines and we'd need a loop.
         } catch (Exception e) {
             System.out.println("Failed to load files :(");
             e.printStackTrace();
