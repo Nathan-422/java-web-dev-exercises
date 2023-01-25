@@ -66,4 +66,28 @@ public class Student {
     private void setGpa(double gpa) {
         this.gpa = gpa;
     }
+
+    public String getGradeLevel() {
+        if (this.getNumberOfCredits() > 0 && this.getNumberOfCredits() <= 29) {
+            return "Freshman";
+        } else if (this.getNumberOfCredits() <= 59) {
+            return "Sophomore";
+        } else if (this.getNumberOfCredits() <= 89) {
+            return "Junior";
+        } else if (this.getNumberOfCredits() > 90) {
+            return "Senior";
+        }
+
+        return "Something is wrong with this student.";
+    }
+
+    public void addGrade(int numOfCredits, double grade) {
+
+        final double currentGPA = this.getGpa() / this.getNumberOfCredits();
+
+        final double addedGPA = grade / numOfCredits;
+
+        this.setNumberOfCredits(numOfCredits + this.getNumberOfCredits());
+
+    }
 }
