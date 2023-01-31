@@ -29,6 +29,10 @@ public class TrueFalse extends Question {
                 continue;
             }
 
+            // Note: There can only be one scanner reading System.in at a time, so we must close these
+            // or pass a scanner object to the constructor that can be shared between all classes.
+            scanner.close();
+
             boolean userAnswer;
 
             userAnswer = userInput == 1;
