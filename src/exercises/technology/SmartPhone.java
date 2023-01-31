@@ -12,8 +12,8 @@ public class SmartPhone extends Computer{
         return isDisplayPowered;
     }
 
-    private void setDisplayPowered(boolean displayPowered) {
-        isDisplayPowered = displayPowered;
+    private void setDisplayPowered(boolean state) {
+        isDisplayPowered = state;
     }
 
     public boolean toggleDisplayPower() {
