@@ -5,25 +5,26 @@ import java.util.Scanner;
 public class TrueFalse extends Question {
 
     private final boolean answer;
-    private final Scanner scanner;
-
-    public TrueFalse(String question, boolean answer) {
-        super(question);
+    public TrueFalse(String question, Scanner scanner, boolean answer) {
+        super(question, scanner);
         this.answer = answer;
-        this.scanner = new Scanner(System.in);
     }
 
     @Override
     public boolean tryAnswer() {
 
+
+//        Scanner scanner = new Scanner(System.in);
+
         while (true) {
 
-            System.out.println(super.getQuestion() + "\n\nChoose an answer:\n1) True\n2)False");
+            System.out.println(super.getQuestion() + "\n\nChoose an answer:\n" + this.getAnswers());
 
             int userInput;
 
+
             try {
-                userInput = Integer.parseInt(scanner.nextLine());
+                userInput = Integer.parseInt(super.getUserInput().nextLine());
             } catch (Exception e) {
                 System.out.println("Input must be 1 or 2");
                 continue;
@@ -31,7 +32,7 @@ public class TrueFalse extends Question {
 
             // Note: There can only be one scanner reading System.in at a time, so we must close these
             // or pass a scanner object to the constructor that can be shared between all classes.
-            scanner.close();
+//            scanner.close();
 
             boolean userAnswer;
 
@@ -44,7 +45,7 @@ public class TrueFalse extends Question {
 
     @Override
     public String getAnswers() {
-        return "1) True\n2)False";
+        return "1) True\n2) False";
     }
 
     @Override
