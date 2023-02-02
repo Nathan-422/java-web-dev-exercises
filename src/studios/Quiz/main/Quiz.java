@@ -1,12 +1,6 @@
-package studios.Quiz;
+package studios.Quiz.main;
 
-    import studios.Quiz.Question;
-    import studios.Quiz.TrueFalse;
-    import studios.Quiz.MultipleChoice;
-
-    import java.sql.Array;
     import java.util.ArrayList;
-    import java.util.Collection;
     import java.util.Scanner;
 
 public class Quiz {

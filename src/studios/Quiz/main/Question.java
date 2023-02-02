@@ -1,4 +1,4 @@
-package studios.Quiz;
+package studios.Quiz.main;
 
 import java.util.Scanner;
 
@@ -24,6 +24,8 @@ public abstract class Question {
 
     public abstract String getAnswers();
     @Override
-    public abstract String toString();
+    public String toString() {
+        return this.question;
+    };
 
 }

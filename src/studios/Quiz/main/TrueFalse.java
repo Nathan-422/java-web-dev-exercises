@@ -1,4 +1,4 @@
-package studios.Quiz;
+package studios.Quiz.main;
 
 import java.util.Scanner;
 
@@ -46,11 +46,6 @@ public class TrueFalse extends Question {
     @Override
     public String getAnswers() {
         return "1) True\n2) False";
-    }
-
-    @Override
-    public String toString() {
-        return super.getQuestion();
     }
 
 }

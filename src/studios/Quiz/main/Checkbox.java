@@ -1,4 +1,4 @@
-package studios.Quiz;
+package studios.Quiz.main;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -115,11 +115,6 @@ public class Checkbox extends Question {
         }
 
         return true;
-    }
-
-    @Override
-    public String toString() {
-        return super.getQuestion();
     }
 
 }

@@ -1,4 +1,4 @@
-package studios.Quiz;
+package studios.Quiz.main;
 
 import java.util.Scanner;
 
@@ -71,8 +71,4 @@ public class MultipleChoice extends Question {
         return this.getCorrectAnswer().equals(this.getPossibleAnswers()[userChoice - 1]);
     }
 
-    @Override
-    public String toString() {
-        return super.getQuestion();
-    }
 }
